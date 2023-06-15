@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Log In</title>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div id="header">
+        <h1>Welcome {{ user.username }} ☻</h1>
+    </div>
+    <div id="inspo">
+        <h2>you did it! :D</h2>
+        <img src="http://rb.gy/d7bip" alt="you did it!">
+    </div>
+    <div id="logout">
+        <a href="/logout">Log Out</a>
+    </div>
+</body>
+</html>

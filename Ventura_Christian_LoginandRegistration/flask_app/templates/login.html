@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Log In</title>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div id="header">
+        <h1>chis's epic user machine :)</h1>
+    </div>
+    <div id="container">
+        <div id="register">
+            <h1>Register</h1>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p class="error">* {{ message }}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <form action="/register" method="post" class="form">
+                <div class="form_input">
+                    <input type="text" name="username" placeholder="Username" required="required">
+                </div>
+                <div class="form_input">
+                    <input type="text" name="email" placeholder="Email" required="required">
+                </div>
+                <div class="form_input">
+                    <input type="text" name="first_name" placeholder="First Name" required="required">
+                </div>    
+                <div class="form_input">
+                    <input type="text" name="last_name" placeholder="Last Name" required="required">
+                </div>
+                <div class="form_input">
+                    <input type="password" name="password" placeholder="Password" required="required">
+                </div>
+                <div class="form_input">
+                    <input type="password" name="confirm_password" placeholder="Confirm Password" required="required">
+                    <div >
+                        <button type="submit" class="submit">Register</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div id="login">
+            <h1>Log In ☺</h1>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p class="error">* {{ message }}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <form action="/login" method="post" class="form">
+                <div class="form_input">
+                    <input type="text" name="email" placeholder="Email" required="required">
+                </div>
+                <div class="form_input">
+                    <input type="password" name="password" placeholder="Password" required="required" >
+                    <div>
+                        <button type="submit" class="submit">Log In</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
